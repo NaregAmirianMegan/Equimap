@@ -39,7 +39,7 @@ def text_from_html(body):
 #     hq = soup.find(text='Headquarters').a.next_sibling
 #     return hq
 
-def compile_corpus(input, num_results=10):
+def compile_corpus(input, num_results=1):
     # lat, long = get_lat_long(input)
     urls = call_python_version("2.7", "gather_urls", "get_urls",
                                  [input, num_results])
@@ -48,5 +48,4 @@ def compile_corpus(input, num_results=10):
         html = requests.get(url).text
         text_list.append(text_from_html(html))
     return text_list
-
-print(compile_corpus('AAPL', 2))
+#( , lat, long)
