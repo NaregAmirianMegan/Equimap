@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Python Google Cloud Natural Language sample for Google App Engine Flexible Environment
 
 This sample demonstrates how to use the [Google Cloud Natural Language API](https://cloud.google.com/natural-language/) on [Google App Engine Flexible Environment](https://cloud.google.com/appengine). This app allows users to input text, which is sent to the Google Cloud Natural Language API. The frontend of the application displays information retrieved from the Natural Language API including sentiment analysis, entity detection, and entity sentiment.
@@ -71,3 +72,35 @@ Deploy your application to App Engine (takes several minutes). When prompted to 
 ## Further Reference
 
 [Documentation for Google Cloud Client Libraries for Python](https://googlecloudplatform.github.io/google-cloud-python/latest/index.html)
+=======
+# CalHacksApp
+Hack at Cal Hacks
+
+{% if sentiment.score < 20 and sentiment.score >= -20 %}
+            <p>The current opinion on this company appears pretty neutral. We reccomend you keep the stocks.</p>
+          {% endif %}
+
+          {% if sentiment.score < 40 and sentiment.score >= 20  %}
+            <p>The company seems to be on a positive trend. We reccomend you to consider investing more into this company.</p>
+          {% endif %}
+
+          {% if sentiment.score < 75  and sentiment.score >= 40%}
+            <p>The company seems to have a great outlook based on current public opinion. You may want to start considering selling your stocks for this company.</p>
+          {% endif %}
+
+          {% if sentiment.score > 75 %}
+            <p>This company appears to be at a all time high and the bubble may soon burst. This is a great time to sell your stocks as demand for this company is high based on public opinion.</p>
+          {% endif %}
+
+          {% if sentiment.score < -20 and sentiment.score >= -40 %}
+            <p>This company appears to be on the down side. Consider either selling or holding out on this minor low.</p>
+          {% endif %}
+
+          {% if sentiment.score < -40 and sentiment.score >= -75 %}
+            <p>Things are really not looking too great. We reccomend you to sell your stocks as the public really is starting to lose trust in this company.</p>
+          {% endif %}
+
+          {% if sentiment.score < -75 %}
+            <p>Public opinion for this company is nearing the bottom. It definitely is time to sell all your stocks before the stock prices drop even lower!</p>
+          {% endif %}
+>>>>>>> e19ea7fbe1b332877d2a0704d7e897d57bc4e0d5

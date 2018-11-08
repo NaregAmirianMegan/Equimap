@@ -1,4 +1,7 @@
 StockTip-489a08f3ad46.json
-language/
+gather_urls.pyc
+input_to_corpus.pyc
+.DS_Store
+__pycache__/
 test/
 env/

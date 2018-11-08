@@ -12,14 +12,14 @@ app = Flask(__name__)
 @app.route('/')
 def homepage():
     # Return a Jinja2 HTML template of the homepage.
-    return 'index.html'
+    return render_template('index.html')
 
 @app.route('/run_language', methods=['GET', 'POST'])
 def run_language():
     # Create a Cloud Natural Language client
     client = language.LanguageServiceClient()
 
-    # Retrieve inputted text from the form and create document object
+    # Retrieve input text from the form and create document object
     text = request.form['text']
     result = compile_corpus(text)
 
