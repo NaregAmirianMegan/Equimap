@@ -3,5 +3,4 @@ gather_urls.pyc
 input_to_corpus.pyc
 .DS_Store
 __pycache__/
-test/
 env/

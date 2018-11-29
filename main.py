@@ -8,7 +8,6 @@ from input_to_corpus import compile_corpus
 
 app = Flask(__name__)
 
-
 @app.route('/')
 def homepage():
     # Return a Jinja2 HTML template of the homepage.
@@ -22,6 +21,8 @@ def run_language():
     # Retrieve input text from the form and create document object
     text = request.form['text']
     result = compile_corpus(text)
+
+    print(result)
 
     total = 0
     for article in result:
