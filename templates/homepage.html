@@ -1,14 +1,50 @@
-<h1>Google Cloud Platform - Natural Language Sample</h1>
-
-<p>This Python Flask application demonstrates App Engine Flexible and the Natural Language API</p>
-
-<br>
-
+<!DOCTYPE html>
 <html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+}
+
+input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+.container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+</style>
+</head>
+
   <body>
+    <h3>Stock Tip Analysis</h3>
     <form action="run_language" method="POST" enctype="multipart/form-data">
-      Text: <input type="text" name="text"><br>
+      <div class="container">
+      Search: <input Placeholder="Company Name" type="text" name="text"><br>
       <input type="submit" name="submit" value="Submit">
+    </div>
     </form>
 
 
@@ -65,23 +101,6 @@
           {% if sentiment.score < -75 %}
             <p>Public opinion for this company is nearing the bottom. It definitely is time to sell all your stocks before the stock prices drop even lower!</p>
           {% endif %}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
         </p>
