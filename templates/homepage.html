@@ -1,0 +1,91 @@
+<h1>Google Cloud Platform - Natural Language Sample</h1>
+
+<p>This Python Flask application demonstrates App Engine Flexible and the Natural Language API</p>
+
+<br>
+
+<html>
+  <body>
+    <form action="run_language" method="POST" enctype="multipart/form-data">
+      Text: <input type="text" name="text"><br>
+      <input type="submit" name="submit" value="Submit">
+    </form>
+
+
+    {% if sentiment %}
+      <h2>Inputted Text:</h2>
+      <p>{{text}}</p>
+      <br>
+      <h2>Entity Detection:</h2>
+      {% for entity in entities %}
+        <p><b>Name:</b> {{ entity.name }}</p>
+        <p><b>Salience:</b> {{ entity.salience }}</p>
+        {% if entity.metadata['wikipedia_url'] %}
+          <p><a href="{{entity.metadata['wikipedia_url']}}">{{ entity.metadata['wikipedia_url'] }}</a></p>
+        {% endif %}
+        <br>
+      {% endfor %}
+      <h2>Sentiment Analysis:</h2>
+        <p><b>Magnitude:</b> {{ sentiment.magnitude }}
+
+          {% if sentiment.score < 0 %}
+            <p>Mixed emotion, if much bigger than sentiment score</p>
+          {% endif %}
+
+        </p>
+        <p><b>Score:</b>
+
+          {{ sentiment.score}}
+
+
+          {% if sentiment.score < 20 and sentiment.score >= -20 %}
+            <p>The current opinion on this company appears pretty neutral. We reccomend you keep the stocks.</p>
+          {% endif %}
+
+          {% if sentiment.score < 40 and sentiment.score >= 20  %}
+            <p>The company seems to be on a positive trend. We reccomend you to consider investing more into this company.</p>
+          {% endif %}
+
+          {% if sentiment.score < 75  and sentiment.score >= 40%}
+            <p>The company seems to have a great outlook based on current public opinion. You may want to start considering selling your stocks for this company.</p>
+          {% endif %}
+
+          {% if sentiment.score > 75 %}
+            <p>This company appears to be at a all time high and the bubble may soon burst. This is a great time to sell your stocks as demand for this company is high based on public opinion.</p>
+          {% endif %}
+
+          {% if sentiment.score < -20 and sentiment.score >= -40 %}
+            <p>This company appears to be on the down side. Consider either selling or holding out on this minor low.</p>
+          {% endif %}
+
+          {% if sentiment.score < -40 and sentiment.score >= -75 %}
+            <p>Things are really not looking too great. We reccomend you to sell your stocks as the public really is starting to lose trust in this company.</p>
+          {% endif %}
+
+          {% if sentiment.score < -75 %}
+            <p>Public opinion for this company is nearing the bottom. It definitely is time to sell all your stocks before the stock prices drop even lower!</p>
+          {% endif %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </p>
+      <br>
+    {% endif %}
+  </body>
+</html>
