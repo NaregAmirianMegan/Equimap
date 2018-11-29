@@ -21,11 +21,11 @@ Install dependencies:
 
     pip install -r requirements.txt
 
-Test your application locally:
+Test the application locally:
 
     python main.py
 
-Visit `localhost:8080` to view your application running locally. Press `Control-C` from command line when you are finished.
+# Now open the index.html file in the templates folder to test the project and view the front-end
 
 When you are ready to leave your virtual environment:
 
