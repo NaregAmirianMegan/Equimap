@@ -3,7 +3,7 @@
 This project was done utilizing Google's machine larning libraries and the whole project basically does this
 1. Parses through news articles on google using beatiful soup 4 and converted to json data to be utilized for analysis
 2. The api was then called upon the text from the articles
-3. This was all then integrated into a front end UI
+3. This was all then integrated into a front end UI with flask so that the python written scripts could run
 
 ## Running Locally
 
