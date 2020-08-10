@@ -1,4 +1,4 @@
-# Creators: Matt Peng, Nareg Megan
+# Creators: Matt Peng, Nareg Megan, Nitin Prasad
 ## About: 
 This project was done utilizing Google's machine larning libraries and the whole project basically does this
 1. Parses through news articles on google using beatiful soup 4 and converted to json data to be utilized for analysis
@@ -38,3 +38,4 @@ This project was built at Cal Hacks 5 and gives analysis based off sentiment sco
 ## Contact Us:
 **mattpeng3@gmail.com**
 **nmegan@berkeley.edu**
+**nprasad247@berkeley.edu**
